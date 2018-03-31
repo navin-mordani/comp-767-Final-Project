@@ -131,3 +131,49 @@ class EnvSetTarget:
             return 0
 
 
+
+class EnvChaseTarget(EnvSetTarget):
+
+    def __init__(self,target):
+        EnvSetTarget.__init__(self)
+        self.distance_from_target = target
+
+    def reset(self,target):
+        """
+
+        :return:
+        """
+        arr = EnvSetTarget.reset(self)
+        self.distance_from_target = target
+        return np.append(arr,self.distance_from_target)
+
+    def set_state(self,state_vector):
+        """
+
+        :param state_vector:
+        :return:
+        """
+        EnvSetTarget.set_state(self,state_vector)
+        self.distance_from_target = state_vector[2]
+
+    def step(self,action):
+        """
+
+        :param action:
+        :return:
+        """
+
+        observation, reward, done, info = EnvSetTarget.step(self,action)
+        self.distance_from_target -= reward
+        observation = np.append(observation,self.distance_from_target)
+        if self.__target_achieved():
+            done = True
+        return observation, reward, done, info
+
+    def __target_achieved(self):
+        if self.distance_from_target <= 0:
+            return True
+        else:
+            return False
+
+
