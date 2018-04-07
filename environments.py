@@ -5,11 +5,11 @@ from matplotlib import pyplot as plt
 class EnvSetTarget:
 
 
-    def __init__(self):
+    def __init__(self,max_time_steps,max_lives_lost):
         self.min_time_steps_elapsed = 0
-        self.max_time_steps_elapsed=120
+        self.max_time_steps_elapsed=max_time_steps
         self.min_lives_lost=0
-        self.max_lives_lost=10
+        self.max_lives_lost=max_lives_lost
         self.max_steps = 120
         self.time_steps_elapsed = 0 #this represents the #darts you have thrown so far(0,119)
         self.lives_lost = 0#lives lost so far(min=0,max=9)you have atmost 10 lives
@@ -134,8 +134,8 @@ class EnvSetTarget:
 
 class EnvChaseTarget(EnvSetTarget):
 
-    def __init__(self,target):
-        EnvSetTarget.__init__(self)
+    def __init__(self,max_time_steps,max_lives_lost,target):
+        EnvSetTarget.__init__(self,max_time_steps,max_lives_lost)
         self.distance_from_target = target
 
     def reset(self,target):
