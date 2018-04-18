@@ -13,7 +13,7 @@ Num | Observation | Min | Max
 
 
 
-* **Action Space**
+#### Action Space
 
 Action Number | Max Reward associated| Prob. of success
 ------------ | -------------|--------------
@@ -23,12 +23,22 @@ Action Number | Max Reward associated| Prob. of success
 3 | 6 | 0.6
 
 
-* **Reward**
+#### Reward
 On every action if the action successful then the maximum reward associated
-with the action will be achieved else a reward of  will be achieved.
+with the action will be achieved else a reward of  will be achieved.\
 For example: on action 0 the max reward associated is 1. So if the action was successful then reward of 1 will be achieved else 0 will be achieved.
 
-* **Start state**
-At the start no time steps have elapsed so far ,i.e no darts have been thrown yet. Therefore the number of time_steps_elased = 0.
+#### Start state
+At the start no time steps have elapsed so far ,i.e no darts have been thrown yet. Therefore the number of time_steps_elased = 0.\
+Similarly no lives have been lost so far. Therefore, the lives_lost = 0.
+
+**Start state**: [0,0] 
+
+#### Episode Termination
+The episodes terminates if either of this happens:-\
+* The time is over. That is the time_steps_elapsed becomes equal to max_time_steps elapsed that was set by the user
+when creating the environment. (Ins short you have ran out of darts)
+* All the lives have been lost. That is the variable lives_lost becomes equal to the max lives that the user had set 
+when creating the environment.
 
 ```
