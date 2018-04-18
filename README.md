@@ -26,7 +26,6 @@ Action Number | Max Reward associated| Prob. of success
 * **Reward**
 On every action if the action successful then the maximum reward associated
 with the action will be achieved else a reward of  will be achieved.
-
 For example: on action 0 the max reward associated is 1. So if the action was successful then reward of 1 will be achieved else 0 will be achieved.
 
 * **Start state**
