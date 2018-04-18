@@ -11,9 +11,9 @@ Num | Observation | Min | Max
 0 | time_steps_elapsed(number of darts thrown so far) | 0 | 6
 1 |  lives_lost | 0 | 2
 
-[//]:#(Two variables :-)
-[//]:#(1. time_steps_elapsed(number of darts the agent has thrown so far) lies in the set[0,..,120])
-[//]:#(2. lives_lost(number of darts that have missed the boards they were aimed at) lies in the set[0,..,10])
+[//] : # (Two variables :-)
+[//] : # (1. time_steps_elapsed(number of darts the agent has thrown so far) lies in the set[0,..,120])
+[//] : # (2. lives_lost(number of darts that have missed the boards they were aimed at) lies in the set[0,..,10])
 --------------
 * **Action Space**
 
