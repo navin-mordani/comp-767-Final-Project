@@ -2,17 +2,23 @@ import numpy as np
 from copy import deepcopy
 from matplotlib import pyplot as plt
 
+#env for 1st agent as it needs to set a target
 class EnvSetTarget:
 
-
+	#max_time_steps - total num of darsts
+	#max_lives_lost -total lives
     def __init__(self,max_time_steps,max_lives_lost):
         self.min_time_steps_elapsed = 0
         self.max_time_steps_elapsed=max_time_steps
         self.min_lives_lost=0
         self.max_lives_lost=max_lives_lost
-        self.max_steps = 120
+        #self.max_steps = 120
+        
+        #state variables
         self.time_steps_elapsed = 0 #this represents the #darts you have thrown so far(0,119)
         self.lives_lost = 0#lives lost so far(min=0,max=9)you have atmost 10 lives
+        
+        #action sapce
         self.action_space={
             0:self.__one,
             1:self.__two,
@@ -132,6 +138,8 @@ class EnvSetTarget:
 
 
 
+
+#second agent
 class EnvChaseTarget(EnvSetTarget):
 
     def __init__(self,max_time_steps,max_lives_lost,target):
@@ -166,8 +174,15 @@ class EnvChaseTarget(EnvSetTarget):
         observation, reward, done, info = EnvSetTarget.step(self,action)
         self.distance_from_target -= reward
         observation = np.append(observation,self.distance_from_target)
+        reward = 0
+        if done: #if already ended due to time over or loosing of all lives
+            done = True
+            reward = -1
+
         if self.__target_achieved():
             done = True
+            reward = +1
+
         return observation, reward, done, info
 
     def __target_achieved(self):
