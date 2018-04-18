@@ -4,7 +4,7 @@
 ```
 Environment for Agent 1 that sets the target. The aim of agent 1 is to maximize the score(target).
 ```
-* **State Space** 
+####State Space 
 
 Num | Observation | Min | Max
 ---|---|---|---
