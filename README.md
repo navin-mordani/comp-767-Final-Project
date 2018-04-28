@@ -92,18 +92,18 @@ when creating the environment.
 
 For example if the env was initiated with max time steps = 6, max lives = 2, target=10 then all states [6,-,-], [-,2,-] and [-,-,<=0] are terminal states.
 
-##Methods
+## Methods
 
-###Agent 1
+### Agent 1
 ```
 The learning methods for agent 1 can be found in the file agent_1_learning.ipynb
 ```
 
-###Agent 2 
+### Agent 2 
 ```
 The actor critic learning method can be found in the file actor_critic_second_agent.ipynb
 ```
-##Requirements
+## Requirements
 ```
 requirements.txt
 ``` 
