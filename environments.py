@@ -145,6 +145,7 @@ class EnvChaseTarget(EnvSetTarget):
     def __init__(self,max_time_steps,max_lives_lost,target):
         EnvSetTarget.__init__(self,max_time_steps,max_lives_lost)
         self.distance_from_target = target
+	self.init_target = target
 
     def reset(self,target):
         """
