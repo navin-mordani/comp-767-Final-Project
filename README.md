@@ -1,3 +1,4 @@
+
 # comp-767-Final-Project
 ## environments.py
 ### EnvSetTarget 
@@ -92,3 +93,8 @@ when creating the environment.
 For example if the env was initiated with max time steps = 6, max lives = 2, target=10 then all states [6,-,-], [-,2,-] and [-,-,<=0] are terminal states.
 
 
+||||||| merged common ancestors
+=======
+# final-project-thunderbolt
+final-project-thunderbolt created by GitHub Classroom
+>>>>>>> 15e8e72757939216fe4ad4cea6bc59ea979ccff5
